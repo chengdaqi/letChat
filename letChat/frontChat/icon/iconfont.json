@@ -1,0 +1,37 @@
+{
+  "id": "2300148",
+  "name": "letchat",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4933309",
+      "name": "发现",
+      "font_class": "faxian",
+      "unicode": "e720",
+      "unicode_decimal": 59168
+    },
+    {
+      "icon_id": "5609550",
+      "name": "通讯",
+      "font_class": "icon-test",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "12296973",
+      "name": "我  个人资料",
+      "font_class": "wogerenziliao",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "14348127",
+      "name": "消 息 (1)",
+      "font_class": "xiaoxi1",
+      "unicode": "e695",
+      "unicode_decimal": 59029
+    }
+  ]
+}

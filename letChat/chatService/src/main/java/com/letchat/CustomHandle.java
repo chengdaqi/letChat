@@ -13,9 +13,11 @@ import io.netty.util.concurrent.EventExecutorGroup;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 
-// 自定义用户处理类
+/**
+ * @author 冉冉的MagicBook
+ * 自定义用户处理类
+ */
 public class CustomHandle extends SimpleChannelInboundHandler<HttpObject> {
-
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, HttpObject httpObject) {
