@@ -7,7 +7,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 /**
- * @author 冉冉的MagicBook
+ * @author alice
  */
 public class HelloServer {
 

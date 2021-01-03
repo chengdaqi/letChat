@@ -17,6 +17,7 @@
 
     <modules>
         <module>chatService</module>
+        <module>generstorUtils</module>
     </modules>
 
     <name>letchat</name>

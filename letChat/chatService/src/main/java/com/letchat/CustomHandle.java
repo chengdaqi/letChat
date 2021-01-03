@@ -14,7 +14,7 @@ import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 
 /**
- * @author 冉冉的MagicBook
+ * @author alice
  * 自定义用户处理类
  */
 public class CustomHandle extends SimpleChannelInboundHandler<HttpObject> {

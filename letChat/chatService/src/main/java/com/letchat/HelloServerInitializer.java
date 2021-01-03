@@ -6,7 +6,7 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.codec.http.HttpServerCodec;
 
 /**
- * @author 冉冉的MagicBook
+ * @author alice
  */
 public class HelloServerInitializer extends ChannelInitializer<SocketChannel> {
 
