@@ -42,11 +42,11 @@ public class CustomHandle extends SimpleChannelInboundHandler<TextWebSocketFrame
         // 获取客户端传输过来的消息
         String content = msg.text();
         System.out.println("接收到的消息是：" + content);
+        System.out.println(usersClients);
 
-        for (Channel channel : usersClients) {
+        /*for (Channel channel : usersClients) {
             channel.writeAndFlush(new TextWebSocketFrame("[服务器在]" + LocalDateTime.now() + "接收到消息为：" + content));
-        }
-
-        // usersClients.writeAndFlush(new TextWebSocketFrame("[服务器在]" + LocalDateTime.now() + "接收到消息为：" + content));
+        }*/
+        ctx.channel().writeAndFlush(new TextWebSocketFrame("[服务器在]" + LocalDateTime.now() + "接收到消息为：" + content));
     }
 }
