@@ -2,6 +2,9 @@ package com.letchat.pojo;
 
 import javax.persistence.*;
 
+/**
+ * @author alice
+ */
 @Table(name = "my_friends")
 public class MyFriends {
     @Id
