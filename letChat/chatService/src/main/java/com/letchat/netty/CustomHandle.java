@@ -16,6 +16,7 @@ import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.util.CharsetUtil;
 import io.netty.util.concurrent.EventExecutorGroup;
 import io.netty.util.concurrent.GlobalEventExecutor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
@@ -30,9 +31,12 @@ import java.util.List;
  * 自定义用户处理类
  */
 @Component
+@Slf4j
 public class CustomHandle extends SimpleChannelInboundHandler<TextWebSocketFrame> {
 
-    // 用于记录和管理所有客户端的 channel
+    /**
+     * 用于记录和管理所有客户端的 channel
+     **/
     public static ChannelGroup usersClients =
             new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
 
@@ -42,11 +46,10 @@ public class CustomHandle extends SimpleChannelInboundHandler<TextWebSocketFrame
         // 获取客户端传输过来的消息
         String content = msg.text();
         System.out.println("接收到的消息是：" + content);
-        System.out.println(usersClients);
-
-        /*for (Channel channel : usersClients) {
+        log.info("接收到的消息是：{}", content);
+        // 添加客户端到 channel 中
+        for (Channel channel : usersClients) {
             channel.writeAndFlush(new TextWebSocketFrame("[服务器在]" + LocalDateTime.now() + "接收到消息为：" + content));
-        }*/
-        ctx.channel().writeAndFlush(new TextWebSocketFrame("[服务器在]" + LocalDateTime.now() + "接收到消息为：" + content));
+        }
     }
 }

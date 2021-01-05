@@ -3,15 +3,16 @@ package com.letchat.netty;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
-import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author alice
  */
+@Slf4j
 public class NettyServerInitializer extends ChannelInitializer<SocketChannel> {
 
     @Override
@@ -23,7 +24,7 @@ public class NettyServerInitializer extends ChannelInitializer<SocketChannel> {
         pipeline.addLast(new ChunkedWriteHandler());
         // 对 HTTTPMessage 进行聚合成 FullHttpRequest 或者 FullHttpResponse
         // 几乎 Netty 编程中都会用到此 Handler
-        pipeline.addLast(new HttpObjectAggregator(1024*64));
+        pipeline.addLast(new HttpObjectAggregator(1024 * 64));
         // 上面是用于支持 Http 协议
         // webSocket 服务器处理的协议，用于指定给客户端连接访问的路径：/ws
         // 本 handler 会帮助你处理一些繁重的复杂的事情
@@ -32,6 +33,9 @@ public class NettyServerInitializer extends ChannelInitializer<SocketChannel> {
         pipeline.addLast(new WebSocketServerProtocolHandler("/ws"));
 
         pipeline.addLast(new CustomHandle());
+
+        log.info("客户端 {} 加入pipeline链接", pipeline.channel());
+        CustomHandle.usersClients.add(pipeline.channel());
     }
 
 }
