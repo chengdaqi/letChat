@@ -1,7 +1,7 @@
-package com.letchat.mapper;
+package com.letchat.web.mapper;
 
 
-import com.letchat.pojo.MyFriends;
+import com.letchat.web.pojo.MyFriends;
 import com.letchat.utils.MyMapper;
 
 /**

@@ -1,9 +1,9 @@
-package com.letchat.controller;
+package com.letchat.web.controller;
 
 import com.letchat.common.Response;
 import com.letchat.common.ResponseCode;
-import com.letchat.pojo.Users;
-import com.letchat.service.LoginService;
+import com.letchat.web.pojo.Users;
+import com.letchat.web.service.LoginService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,7 +1,7 @@
-package com.letchat.mapper;
+package com.letchat.web.mapper;
 
 
-import com.letchat.pojo.Users;
+import com.letchat.web.pojo.Users;
 import com.letchat.utils.MyMapper;
 import org.springframework.stereotype.Repository;
 

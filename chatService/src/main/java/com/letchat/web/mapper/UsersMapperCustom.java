@@ -1,8 +1,8 @@
-package com.letchat.mapper;
+package com.letchat.web.mapper;
 
-import com.letchat.pojo.Users;
-import com.letchat.pojo.vo.FriendRequestVO;
-import com.letchat.pojo.vo.MyFriendsVO;
+import com.letchat.web.pojo.Users;
+import com.letchat.web.pojo.vo.FriendRequestVO;
+import com.letchat.web.pojo.vo.MyFriendsVO;
 import com.letchat.utils.MyMapper;
 
 import java.util.List;

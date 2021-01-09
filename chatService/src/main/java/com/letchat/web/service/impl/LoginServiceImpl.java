@@ -1,8 +1,8 @@
-package com.letchat.service.impl;
+package com.letchat.web.service.impl;
 
-import com.letchat.mapper.UsersMapper;
-import com.letchat.pojo.Users;
-import com.letchat.service.LoginService;
+import com.letchat.web.mapper.UsersMapper;
+import com.letchat.web.pojo.Users;
+import com.letchat.web.service.LoginService;
 import com.letchat.utils.EncryptionUtils;
 import org.springframework.stereotype.Service;
 

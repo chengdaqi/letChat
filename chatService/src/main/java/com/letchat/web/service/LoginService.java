@@ -1,7 +1,7 @@
-package com.letchat.service;
+package com.letchat.web.service;
 
 
-import com.letchat.pojo.Users;
+import com.letchat.web.pojo.Users;
 
 /**
  * @author alice

@@ -1,4 +1,4 @@
-package com.letchat.pojo;
+package com.letchat.web.pojo;
 
 import java.util.Date;
 import javax.persistence.*;

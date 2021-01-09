@@ -1,4 +1,4 @@
-package com.letchat.pojo;
+package com.letchat.web.pojo;
 
 import lombok.Builder;
 import lombok.Data;

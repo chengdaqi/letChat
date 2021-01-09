@@ -1,6 +1,6 @@
 package com.letchat.netty;
 
-import com.letchat.pojo.ChatMsg;
+import com.letchat.web.pojo.ChatMsg;
 
 import java.io.Serializable;
 
