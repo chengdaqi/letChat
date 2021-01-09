@@ -47,9 +47,20 @@ public class Response<T> {
         return new Response<T>(ResponseCode.SUCCESS.getCode(), data);
     }
 
+    public static <T> Response<T> success(String msg) {
+        return new Response<T>(ResponseCode.SUCCESS.getCode(), msg);
+    }
+
     public static <T> Response<T> success(String msg, T data) {
         return new Response<T>(ResponseCode.SUCCESS.getCode(), msg, data);
     }
 
 
+    public static <T> Response<T> fail(String msg) {
+        return new Response<T>(ResponseCode.SEVER_ERROR.getCode(), msg);
+    }
+
+    public static <T> Response<T> fail(int status,String msg) {
+        return new Response<T>(status, msg);
+    }
 }

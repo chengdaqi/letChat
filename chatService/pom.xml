@@ -124,6 +124,13 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.sun.org.apache/jaxp-ri -->
+        <dependency>
+            <groupId>com.sun.org.apache</groupId>
+            <artifactId>jaxp-ri</artifactId>
+            <version>1.4</version>
+        </dependency>
+
     </dependencies>
 
     <build>
