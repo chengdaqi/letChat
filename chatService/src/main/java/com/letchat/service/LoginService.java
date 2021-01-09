@@ -23,4 +23,11 @@ public interface LoginService {
      * @return 用户
      * **/
     Users queryUserByUserName(String userName);
+
+    /**
+     * 注册用户
+     * @param username 用户名
+     * @param password 密码
+     * **/
+    void registerUser(String username, String password);
 }

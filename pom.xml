@@ -18,6 +18,7 @@
     <modules>
         <module>chatService</module>
         <module>generstorUtils</module>
+        <module>codeGenerator</module>
     </modules>
 
     <name>letchat</name>

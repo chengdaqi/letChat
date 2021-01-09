@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="MysqlContext" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.letchat.utils.MyMapper"/>
+        </plugin>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/muxin-dev"
+                        userId="root"
+                        password="root">
+        </jdbcConnection>
+
+        <!-- 对于生成的pojo所在包 -->
+        <javaModelGenerator targetPackage="com.letchat.pojo" targetProject="src/main/java">
+            <!--  for MyBatis3/MyBatis3Simple
+            自动为每一个生成的类创建一个构造方法，构造方法包含了所有的field；而不是使用setter；
+         -->
+            <property name="constructorBased" value="false"/>
+
+            <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
+            <property name="enableSubPackages" value="true"/>
+
+            <!-- for MyBatis3 / MyBatis3Simple
+                是否创建一个不可变的类，如果为true，
+                那么MBG会创建一个没有setter方法的类，取而代之的是类似constructorBased的类
+             -->
+            <property name="immutable" value="false"/>
+
+
+            <!-- 设置是否在getter方法中，对String类型字段调用trim()方法 -->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+		<!-- 对于生成的mapper所在目录 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+		<!-- 配置mapper对应的java映射 -->
+        <javaClientGenerator targetPackage="com.letchat.mapper" targetProject="src/main/java" type="XMLMAPPER"/>
+
+
+        <table tableName="users"/>
+        <table tableName="my_friends"/>
+        <table tableName="friends_request"/>
+        <table tableName="chat_msg"/>
+		 
+    </context>
+</generatorConfiguration>

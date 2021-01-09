@@ -3,7 +3,10 @@ package com.letchat.pojo;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * @author alice
@@ -12,7 +15,9 @@ import javax.persistence.*;
 @Data
 @Builder
 public class Users {
+
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY,generator="Mysql")
     private String id;
 
     /**
@@ -40,7 +45,7 @@ public class Users {
     private String nickname;
 
     /**
-     * 新用户注册后默认后台生成二维码，并且上传到fastdfs
+     * 新用户注册后默认后台生成二维码，并且上传到 fastdfs
      */
     private String qrcode;
 
