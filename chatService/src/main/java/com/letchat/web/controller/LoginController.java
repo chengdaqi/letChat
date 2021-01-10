@@ -3,11 +3,10 @@ package com.letchat.web.controller;
 import com.letchat.common.Response;
 import com.letchat.common.ResponseCode;
 import com.letchat.web.pojo.Users;
+import com.letchat.web.pojo.vo.UsersVO;
 import com.letchat.web.service.LoginService;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author alice
@@ -23,12 +22,12 @@ public class LoginController {
     }
 
     @PostMapping("registOrLogin")
-    public Response registOrLogin(String username, String password) {
-        if (StringUtils.isNoneBlank(username, password)) {
-            Users user = loginService.queryUser(username, password);
+    public Response registOrLogin(@RequestBody UsersVO userInfo) {
+        if (StringUtils.isNoneBlank(userInfo.getUsername(), userInfo.getPassword())) {
+            Users user = loginService.queryUser(userInfo.getUsername(), userInfo.getPassword());
             if (user == null) {
                 //注册逻辑
-                boolean result = registerUser(username, password);
+                boolean result = registerUser(userInfo.getUsername(), userInfo.getPassword());
                 if (result) {
                     return Response.success("用户注册成功，已登录！");
                 }

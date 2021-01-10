@@ -12,6 +12,7 @@ import lombok.Data;
 public class UsersVO {
     private String id;
     private String username;
+    private String password;
     private String faceImage;
     private String faceImageBig;
     private String nickname;

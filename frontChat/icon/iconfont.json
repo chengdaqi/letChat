@@ -6,6 +6,62 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "6683268",
+      "name": "支付",
+      "font_class": "zhifu",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "10061216",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "14033408",
+      "name": "收藏",
+      "font_class": "shoucang",
+      "unicode": "e732",
+      "unicode_decimal": 59186
+    },
+    {
+      "icon_id": "14815102",
+      "name": "表情",
+      "font_class": "biaoqing",
+      "unicode": "e6e3",
+      "unicode_decimal": 59107
+    },
+    {
+      "icon_id": "17541040",
+      "name": "卡包",
+      "font_class": "kabao",
+      "unicode": "edda",
+      "unicode_decimal": 60890
+    },
+    {
+      "icon_id": "18830506",
+      "name": "相册",
+      "font_class": "xiangce",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "2076330",
+      "name": "加",
+      "font_class": "jia",
+      "unicode": "e8a6",
+      "unicode_decimal": 59558
+    },
+    {
+      "icon_id": "1330714",
+      "name": "查找",
+      "font_class": "chazhao",
+      "unicode": "e741",
+      "unicode_decimal": 59201
+    },
+    {
       "icon_id": "4933309",
       "name": "发现",
       "font_class": "faxian",

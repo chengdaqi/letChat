@@ -9,7 +9,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  */
 
 @SpringBootApplication(scanBasePackages = "com.letchat")
-@MapperScan(basePackages="com.letchat.mapper")
+@MapperScan(basePackages="com.letchat.web.mapper")
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
