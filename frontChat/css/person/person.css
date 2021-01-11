@@ -1,0 +1,18 @@
+.icon {
+	width: 1em;
+	height: 1em;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+}
+
+.mui-media .mui-media-body {
+	display: inline;
+}
+
+.colum_icon {
+	width: 1.0625rem; 
+	height: 1.0625rem;
+	padding-top:0.1875rem;
+	float: right;
+}

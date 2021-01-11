@@ -1,0 +1,258 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>org.example</groupId>\r\n    <artifactId>letchat</artifactId>\r\n    <packaging>pom</packaging>\r\n    <version>1.0-SNAPSHOT</version>\r\n    <parent>\r\n        <groupId>org.springframework.boot</groupId>\r\n        <artifactId>spring-boot-starter-parent</artifactId>\r\n        <version>2.4.1</version>\r\n        <relativePath/>\r\n    </parent>\r\n\r\n    <modules>\r\n        <module>chatService</module>\r\n        <module>generstorUtils</module>\r\n    </modules>\r\n\r\n    <name>letchat</name>\r\n\r\n    <properties>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n        <maven.compiler.source>1.8</maven.compiler.source>\r\n        <maven.compiler.target>1.8</maven.compiler.target>\r\n    </properties>\r\n\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>io.netty</groupId>\r\n            <artifactId>netty-all</artifactId>\r\n        </dependency>\r\n    </dependencies>\r\n\r\n    <build>\r\n        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->\r\n            <plugins>\r\n                <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->\r\n                <plugin>\r\n                    <artifactId>maven-clean-plugin</artifactId>\r\n                    <version>3.1.0</version>\r\n                </plugin>\r\n                <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->\r\n                <plugin>\r\n                    <artifactId>maven-resources-plugin</artifactId>\r\n                    <version>3.0.2</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-compiler-plugin</artifactId>\r\n                    <version>3.8.0</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-surefire-plugin</artifactId>\r\n                    <version>2.22.1</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-jar-plugin</artifactId>\r\n                    <version>3.0.2</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-install-plugin</artifactId>\r\n                    <version>2.5.2</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-deploy-plugin</artifactId>\r\n                    <version>2.8.2</version>\r\n                </plugin>\r\n                <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->\r\n                <plugin>\r\n                    <artifactId>maven-site-plugin</artifactId>\r\n                    <version>3.7.1</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-project-info-reports-plugin</artifactId>\r\n                    <version>3.0.0</version>\r\n                </plugin>\r\n            </plugins>\r\n        </pluginManagement>\r\n    </build>\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pom.xml	(revision 9599d8b962a0a465e956d9a394b85e7981779491)
++++ pom.xml	(date 1610098266959)
+@@ -18,6 +18,7 @@
+     <modules>
+         <module>chatService</module>
+         <module>generstorUtils</module>
++        <module>codeGenerator</module>
+     </modules>
+ 
+     <name>letchat</name>
+Index: chatService/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <parent>\r\n        <artifactId>letchat</artifactId>\r\n        <groupId>org.example</groupId>\r\n        <version>1.0-SNAPSHOT</version>\r\n    </parent>\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <artifactId>chatService</artifactId>\r\n\r\n    <name>chatService</name>\r\n\r\n    <properties>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n        <maven.compiler.source>1.8</maven.compiler.source>\r\n        <maven.compiler.target>1.8</maven.compiler.target>\r\n    </properties>\r\n\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter</artifactId>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-web</artifactId>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-configuration-processor</artifactId>\r\n            <optional>true</optional>\r\n        </dependency>\r\n\r\n        <!-- apache 工具类 -->\r\n        <dependency>\r\n            <groupId>commons-codec</groupId>\r\n            <artifactId>commons-codec</artifactId>\r\n            <version>1.11</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.apache.commons</groupId>\r\n            <artifactId>commons-lang3</artifactId>\r\n            <version>3.4</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.apache.commons</groupId>\r\n            <artifactId>commons-io</artifactId>\r\n            <version>1.3.2</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>mysql</groupId>\r\n            <artifactId>mysql-connector-java</artifactId>\r\n            <version>5.1.41</version>\r\n        </dependency>\r\n\r\n        <!-- mybatis -->\r\n        <dependency>\r\n            <groupId>org.mybatis.spring.boot</groupId>\r\n            <artifactId>mybatis-spring-boot-starter</artifactId>\r\n            <version>2.1.4</version>\r\n        </dependency>\r\n\r\n        <!--mapper -->\r\n        <dependency>\r\n            <groupId>tk.mybatis</groupId>\r\n            <artifactId>mapper-spring-boot-starter</artifactId>\r\n            <version>2.1.4</version>\r\n        </dependency>\r\n\r\n        <!--pagehelper -->\r\n        <dependency>\r\n            <groupId>com.github.pagehelper</groupId>\r\n            <artifactId>pagehelper-spring-boot-starter</artifactId>\r\n            <version>1.3.0</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>junit</groupId>\r\n            <artifactId>junit</artifactId>\r\n            <version>4.11</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>io.netty</groupId>\r\n            <artifactId>netty-all</artifactId>\r\n            <version>4.1.56.Final</version>\r\n        </dependency>\r\n\r\n        <!-- 高性能分布式文件服务器 -->\r\n        <dependency>\r\n            <groupId>com.github.tobato</groupId>\r\n            <artifactId>fastdfs-client</artifactId>\r\n            <version>1.27.2</version>\r\n        </dependency>\r\n\r\n        <!-- 二维码 -->\r\n        <dependency>\r\n            <groupId>com.google.zxing</groupId>\r\n            <artifactId>javase</artifactId>\r\n            <version>3.4.1</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.example</groupId>\r\n            <artifactId>generstorUtils</artifactId>\r\n            <version>1.0-SNAPSHOT</version>\r\n            <scope>compile</scope>\r\n        </dependency>\r\n\r\n        <!-- lombok -->\r\n        <dependency>\r\n            <groupId>org.projectlombok</groupId>\r\n            <artifactId>lombok</artifactId>\r\n            <version>1.18.16</version>\r\n            <scope>provided</scope>\r\n        </dependency>\r\n\r\n    </dependencies>\r\n\r\n    <build>\r\n        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->\r\n            <plugins>\r\n                <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->\r\n                <plugin>\r\n                    <artifactId>maven-clean-plugin</artifactId>\r\n                    <version>3.1.0</version>\r\n                </plugin>\r\n                <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->\r\n                <plugin>\r\n                    <artifactId>maven-resources-plugin</artifactId>\r\n                    <version>3.0.2</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-compiler-plugin</artifactId>\r\n                    <version>3.8.0</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-surefire-plugin</artifactId>\r\n                    <version>2.22.1</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-jar-plugin</artifactId>\r\n                    <version>3.0.2</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-install-plugin</artifactId>\r\n                    <version>2.5.2</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-deploy-plugin</artifactId>\r\n                    <version>2.8.2</version>\r\n                </plugin>\r\n                <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->\r\n                <plugin>\r\n                    <artifactId>maven-site-plugin</artifactId>\r\n                    <version>3.7.1</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-project-info-reports-plugin</artifactId>\r\n                    <version>3.0.0</version>\r\n                </plugin>\r\n            </plugins>\r\n        </pluginManagement>\r\n    </build>\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- chatService/pom.xml	(revision 9599d8b962a0a465e956d9a394b85e7981779491)
++++ chatService/pom.xml	(date 1610098267237)
+@@ -124,6 +124,13 @@
+             <scope>provided</scope>
+         </dependency>
+ 
++        <!--mybatis plus-->
++        <dependency>
++            <groupId>com.baomidou</groupId>
++            <artifactId>mybatis-plus-boot-starter</artifactId>
++            <version>3.4.1</version>
++        </dependency>
++
+     </dependencies>
+ 
+     <build>
+Index: codeGenerator/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- codeGenerator/pom.xml	(date 1610100356416)
++++ codeGenerator/pom.xml	(date 1610100356416)
+@@ -0,0 +1,98 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++    <parent>
++        <artifactId>letchat</artifactId>
++        <groupId>org.example</groupId>
++        <version>1.0-SNAPSHOT</version>
++    </parent>
++    <modelVersion>4.0.0</modelVersion>
++
++    <artifactId>codeGenerator</artifactId>
++
++    <name>codeGenerator</name>
++    <!-- FIXME change it to the project's website -->
++    <url>http://www.example.com</url>
++
++    <properties>
++        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
++        <maven.compiler.source>1.8</maven.compiler.source>
++        <maven.compiler.target>1.8</maven.compiler.target>
++    </properties>
++
++    <dependencies>
++        <dependency>
++            <groupId>junit</groupId>
++            <artifactId>junit</artifactId>
++            <version>4.11</version>
++            <scope>test</scope>
++        </dependency>
++
++        <dependency>
++            <groupId>com.baomidou</groupId>
++            <artifactId>mybatis-plus-generator</artifactId>
++            <version>3.4.1</version>
++        </dependency>
++
++        <dependency>
++            <groupId>com.baomidou</groupId>
++            <artifactId>mybatis-plus-core</artifactId>
++            <version>3.4.1</version>
++            <scope>compile</scope>
++        </dependency>
++
++        <dependency>
++            <groupId>org.projectlombok</groupId>
++            <artifactId>lombok</artifactId>
++            <version>1.18.16</version>
++            <scope>provided</scope>
++        </dependency>
++    </dependencies>
++
++    <build>
++        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
++            <plugins>
++                <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
++                <plugin>
++                    <artifactId>maven-clean-plugin</artifactId>
++                    <version>3.1.0</version>
++                </plugin>
++                <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
++                <plugin>
++                    <artifactId>maven-resources-plugin</artifactId>
++                    <version>3.0.2</version>
++                </plugin>
++                <plugin>
++                    <artifactId>maven-compiler-plugin</artifactId>
++                    <version>3.8.0</version>
++                </plugin>
++                <plugin>
++                    <artifactId>maven-surefire-plugin</artifactId>
++                    <version>2.22.1</version>
++                </plugin>
++                <plugin>
++                    <artifactId>maven-jar-plugin</artifactId>
++                    <version>3.0.2</version>
++                </plugin>
++                <plugin>
++                    <artifactId>maven-install-plugin</artifactId>
++                    <version>2.5.2</version>
++                </plugin>
++                <plugin>
++                    <artifactId>maven-deploy-plugin</artifactId>
++                    <version>2.8.2</version>
++                </plugin>
++                <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
++                <plugin>
++                    <artifactId>maven-site-plugin</artifactId>
++                    <version>3.7.1</version>
++                </plugin>
++                <plugin>
++                    <artifactId>maven-project-info-reports-plugin</artifactId>
++                    <version>3.0.0</version>
++                </plugin>
++            </plugins>
++        </pluginManagement>
++    </build>
++</project>
+Index: codeGenerator/src/main/java/com/letchat/CodeGenerator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- codeGenerator/src/main/java/com/letchat/CodeGenerator.java	(date 1610156976743)
++++ codeGenerator/src/main/java/com/letchat/CodeGenerator.java	(date 1610156976743)
+@@ -0,0 +1,104 @@
++package com.letchat;
++
++import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
++import com.baomidou.mybatisplus.core.toolkit.StringUtils;
++import com.baomidou.mybatisplus.generator.AutoGenerator;
++import com.baomidou.mybatisplus.generator.InjectionConfig;
++import com.baomidou.mybatisplus.generator.config.*;
++import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
++import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
++
++import java.util.ArrayList;
++import java.util.List;
++import java.util.Scanner;
++
++/**
++ * @author yanAn
++ * @version 1.0
++ * @description 代码生成工具
++ * @date
++ **/
++public class CodeGenerator {
++
++    /**
++     * <p>
++     * 读取控制台内容
++     * </p>
++     */
++    public static String scanner(String tip) {
++        Scanner scanner = new Scanner(System.in);
++        StringBuilder help = new StringBuilder();
++        help.append("请输入" + tip + "：");
++        System.out.println(help.toString());
++        if (scanner.hasNext()) {
++            String ipt = scanner.next();
++            if (StringUtils.isNotBlank(ipt)) {
++                return ipt;
++            }
++        }
++        throw new MybatisPlusException("请输入正确的" + tip + "！");
++    }
++
++    public static void main(String[] args) {
++        // 代码生成器
++        AutoGenerator mpg = new AutoGenerator();
++
++        // 全局配置
++
++        // 数据源配置
++        DataSourceConfig dsc = new DataSourceConfig();
++        dsc.setUrl("jdbc:mysql://localhost:3306/ant?useUnicode=true&useSSL=false&characterEncoding=utf8");
++        dsc.setDriverName("com.mysql.jdbc.Driver");
++        dsc.setUsername("root");
++        dsc.setPassword("密码");
++        mpg.setDataSource(dsc);
++
++        // 包配置
++        PackageConfig pc = new PackageConfig();
++        pc.setModuleName(scanner("模块名"));
++        pc.setParent("com.baomidou.ant");
++        mpg.setPackageInfo(pc);
++
++        // 自定义配置
++        InjectionConfig cfg = new InjectionConfig() {
++            @Override
++            public void initMap() {
++                // to do nothing
++            }
++        };
++
++        // 自定义输出配置
++        List<FileOutConfig> focList = new ArrayList<>();
++
++        cfg.setFileOutConfigList(focList);
++        mpg.setCfg(cfg);
++
++        // 配置模板
++        TemplateConfig templateConfig = new TemplateConfig();
++
++        // 配置自定义输出模板
++        //指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别
++
++        templateConfig.setXml(null);
++        mpg.setTemplate(templateConfig);
++
++        // 策略配置
++        StrategyConfig strategy = new StrategyConfig();
++        strategy.setNaming(NamingStrategy.underline_to_camel);
++        strategy.setColumnNaming(NamingStrategy.underline_to_camel);
++        strategy.setSuperEntityClass("你自己的父类实体,没有就不用设置!");
++        strategy.setEntityLombokModel(true);
++        strategy.setRestControllerStyle(true);
++        // 公共父类
++        strategy.setSuperControllerClass("你自己的父类控制器,没有就不用设置!");
++        // 写于父类中的公共字段
++        strategy.setSuperEntityColumns("id");
++        strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
++        strategy.setControllerMappingHyphenStyle(true);
++        strategy.setTablePrefix(pc.getModuleName() + "_");
++        mpg.setStrategy(strategy);
++        mpg.setTemplateEngine(new FreemarkerTemplateEngine());
++        mpg.execute();
++    }
++
++}
