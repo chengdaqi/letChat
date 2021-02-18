@@ -10,6 +10,47 @@
 	display: inline;
 }
 
+.mui-table-view-interval{
+	margin-top: 0.625rem;
+}
+
+.mui-table-view-index{
+	margin-top: 0.625rem;
+	margin-bottom: 0.625rem;
+}
+
+.mui-media-index >a{
+	height: 6.25rem;
+}
+
+.icon-text{
+	margin-left: 0.3125rem;
+}
+
+.icon-erweima{
+	float: right;
+	margin-right: 1.25rem;
+	margin-top: 0.1875rem;
+}
+
+.mui-media-index >a >img{
+	max-width: 3.75rem !important;
+	height: 3.75rem !important;
+	border-radius: 10px;
+	margin-top: 0.625rem;
+}
+
+.user-info{
+	margin-top: 0.625rem;
+}
+
+.mui-nikiname{
+	font-size: 1rem;
+	font-weight: bold;
+	color: #000000;
+	margin-bottom: 1.25rem !important;
+}
+
 .colum_icon {
 	width: 1.0625rem; 
 	height: 1.0625rem;
