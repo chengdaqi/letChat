@@ -3,32 +3,26 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title></title>
 		<script src="js/mui.min.js"></script>
+		<script src="./icon/iconfont.js"></script>
+		<script src="./js/index.js"></script>
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="icon/iconfont.css" />
-		<script type="text/javascript" charset="utf-8">
-			mui.init();
-			// 原生加载完成之后
-			mui.plusReady(function() {
-				plus.navigator.setStatusBarStyle("light");
-				plus.navigator.setStatusBarBackground("#F2F2F2");
-			});
-		</script>
+		<link rel="stylesheet" href="css/index.css" />
 	</head>
 	<body>
 		<header class="mui-bar mui-bar-nav title" >
 			<h1 class="mui-title title-color" style="position: absolute; left: -69%;">微信(7)</h1>
-			<h1 class="mui-title title-color iconfont icon-chazhao" style="position: absolute; left: 75%;"></h1>
-			<h1 class="mui-title title-color iconfont icon-jia" style="position: absolute; left: 85%;right: 0px;"></h1>
+			<h1 class="mui-title title-color iconfont icon-tianjia" style="position: absolute; left: 75%;"></h1>
+			<h1 class="mui-title title-color iconfont icon-sousuo" style="position: absolute; left: 85%;right: 0px;"></h1>
 		</header>
 		<nav class="mui-bar mui-bar-tab">
 			<a class="mui-tab-item mui-active " tabindex="0">
-				<span class="mui-icon iconfont icon-xiaoxi1 "></span>
-				<span class="mui-tab-label">微信</span>
+				<span class="mui-icon iconfont icon-112 "></span>
+				<span class="mui-tab-label">消信</span>
 			</a>
 			<a class="mui-tab-item" tabindex="1">
-				<span class="mui-icon iconfont icon-icon-test"></span>
+				<span class="mui-icon iconfont icon-tongxunlu"></span>
 				<span class="mui-tab-label">通信录</span>
 			</a>
 			<a class="mui-tab-item" tabindex="2">
@@ -36,63 +30,9 @@
 				<span class="mui-tab-label">发现</span>
 			</a>
 			<a class="mui-tab-item" tabindex="3">
-				<span class="mui-icon iconfont icon-wogerenziliao"></span>
+				<span class="mui-icon iconfont icon-biaoqianA01_wode-25"></span>
 				<span class="mui-tab-label">我</span>
 			</a>
 		</nav>
-
-		<script type="text/javascript">
-			var arr = [{
-					pageId: "chatlist.html",
-					pageUrl: "page/chatlist.html"
-				},
-				{
-					pageId: "contact.html",
-					pageUrl: "page/contact.html"
-				},
-				{
-					pageId: "discover.html",
-					pageUrl: "page/discover.html"
-				},
-				{
-					pageId: "person.html",
-					pageUrl: "page/person.html"
-				}
-			];
-
-			// 设置上下边距
-			var t_b_style = {
-				top: "44px",
-				bottom: "50px"
-			};
-
-			mui.plusReady(function() {
-				// 获取当前的webview
-				var currentPage = plus.webview.currentWebview();
-				// 创建4个webview对象
-				for (var index = 0; index < arr.length; index++) {
-					var page = plus.webview.create(arr[index].pageUrl, arr[index].pageId, t_b_style);
-					page.hide();
-					currentPage.append(page)
-				};
-				plus.webview.show(arr[0].pageId);
-
-				// 批量绑定 tap 事件
-				mui(".mui-bar-tab").on("tap", "a", function() {
-					var thisPageIndex = this.getAttribute("tabindex");
-					// 显示点击的tab选项对应的页面
-					plus.webview.show(arr[thisPageIndex].pageId, "fade-in", 200);
-					// 隐藏其他的页面
-					for (var index = 0; index < arr.length; index++) {
-						if (index != thisPageIndex) {
-							plus.webview.hide(arr[index].pageId, "fade-out", 200);
-						}
-					}
-				})
-				// 获取当前点击页面
-			})
-		</script>
-
 	</body>
-
 </html>

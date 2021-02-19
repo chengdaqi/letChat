@@ -26,8 +26,6 @@ public class NettyServer {
 
     private NioEventLoopGroup childrenGroup;
 
-    private ChannelFuture future;
-
     public NettyServer() {
         parentGroup = new NioEventLoopGroup();
 
@@ -41,7 +39,7 @@ public class NettyServer {
     }
 
     public void start() {
-        future = serverBootstrap.bind(8088);
+        ChannelFuture future = serverBootstrap.bind(8088);
         System.err.println("netty websocket server 启动完毕...");
     }
 }
