@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="../js/mui.min.js"></script>
+		<script src="../icon/iconfont.js"></script>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../icon/iconfont.css" rel="stylesheet" />
+		<link href="../css/person/person-detail.css" rel="stylesheet" />
+	</head>
+	<body>
+		
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<div class="mui-media-body icon-text" style="display:inline;">
+						<span class="person-detail-text">头像</span>
+						<span ><img src="../icon/jiantou.svg" class="colum_icon person-detail-text-icon" /></span>
+					</div>
+					<img class="mui-media-object mui-pull-right person-detail-image" src="../images/RE1LBv1_1920x1080.jpg">
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<div class="mui-media-body icon-text">
+						<span>昵称</span>
+					</div>
+					<span class="person-detail-span-text">
+						<img src="../icon/jiantou.svg" class="colum_icon"  />
+						<span>萧遥</span>
+					</span>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<div class="mui-media-body icon-text" style="display:inline;">
+						<span>拍一拍</span>
+					</div>
+					<img src="../icon/jiantou.svg" class="colum_icon"  />
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<div class="mui-media-body icon-text">
+						微信号
+					</div>
+					<span class="person-detail-span-text">
+						<img src="../icon/jiantou.svg" class="colum_icon"  />
+						<span>xiaoyao</span>
+					</span>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<div class="mui-media-body icon-text">
+						二维码名片
+					</div>
+					<span>
+						<img src="../icon/jiantou.svg" class="colum_icon"  />
+						<svg class="icon icon-erweima" aria-hidden="true" style="float: right;">
+							<use xlink:href="#icon-erweima"></use>
+						</svg>
+					</span>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<div class="mui-media-body icon-text">
+						<span>更多</span>
+					</div>
+					<img src="../icon/jiantou.svg" class="colum_icon"  />
+				</a>
+			</li>
+			</ul>
+			<ul class="mui-table-view mui-table-view-interval">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<div class="mui-media-body icon-text">
+							微信豆
+						</div>
+						<img src="../icon/jiantou.svg" class="colum_icon"  />
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view mui-table-view-index">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<div class="mui-media-body icon-text" style="display:inline;">
+							我的地址
+						</div>
+						<img src="../icon/jiantou.svg" class="colum_icon"  />
+					</a>
+				</li>
+			</ul>
+	</body>
+
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+		// 原生加载完成之后
+		mui.plusReady(function() {
+			plus.navigator.setStatusBarStyle("light");
+			plus.navigator.setStatusBarBackground("#F2F2F2");
+		});
+		
+		getUserInfo(){
+			
+		}
+	</script>
+</html>

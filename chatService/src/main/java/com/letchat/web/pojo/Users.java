@@ -23,7 +23,8 @@ public class Users {
     /**
      * 用户名，账号，慕信号
      */
-    private String username;
+    @Column(name = "letchat_num")
+    private String letchatNum;
 
     /**
      * 密码
@@ -48,7 +49,5 @@ public class Users {
      * 新用户注册后默认后台生成二维码，并且上传到 fastdfs
      */
     private String qrcode;
-
-    private String cid;
 
 }

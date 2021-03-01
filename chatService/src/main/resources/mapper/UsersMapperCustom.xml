@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.letchat.web.mapper.UsersMapperCustom" >
 
-	<select id="queryFriendRequestList" resultType="com.letchat.web.pojo.vo.FriendRequestVO"
+	<select id="queryFriendRequestList" resultType="com.letchat.web.pojo.FriendsRequest"
 			parameterType="String">
 
 		select
@@ -22,7 +22,7 @@
 	</select>
 
 
-	<select id="queryMyFriends" resultType="com.letchat.web.pojo.vo.MyFriendsVO"
+	<select id="queryMyFriends" resultType="com.letchat.web.pojo.MyFriends"
 			parameterType="String">
 
 		select

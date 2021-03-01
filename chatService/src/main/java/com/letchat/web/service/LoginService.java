@@ -26,8 +26,7 @@ public interface LoginService {
 
     /**
      * 注册用户
-     * @param username 用户名
-     * @param password 密码
+     * @param userInfo 用户信息
      * **/
-    void registerUser(String username, String password);
+    void registerUser(Users userInfo);
 }

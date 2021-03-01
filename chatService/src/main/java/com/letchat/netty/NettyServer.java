@@ -20,16 +20,12 @@ public class NettyServer {
         static final NettyServer INSTANCE = new NettyServer();
     }
 
-    private ServerBootstrap serverBootstrap;
-
-    private NioEventLoopGroup parentGroup;
-
-    private NioEventLoopGroup childrenGroup;
+    private final ServerBootstrap serverBootstrap;
 
     public NettyServer() {
-        parentGroup = new NioEventLoopGroup();
+        NioEventLoopGroup parentGroup = new NioEventLoopGroup();
 
-        childrenGroup = new NioEventLoopGroup();
+        NioEventLoopGroup childrenGroup = new NioEventLoopGroup();
 
         serverBootstrap = new ServerBootstrap();
 

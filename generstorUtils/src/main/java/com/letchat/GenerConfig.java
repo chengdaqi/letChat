@@ -1,5 +1,7 @@
 package com.letchat;
 
+
+
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
@@ -38,6 +40,5 @@ public class GenerConfig {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }

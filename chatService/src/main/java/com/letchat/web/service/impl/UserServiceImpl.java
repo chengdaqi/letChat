@@ -22,8 +22,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Users findUserByUserName(String username) {
-        Users user = Users.builder().username(username).build();
+    public Users findUserByUserName(String letchatNum) {
+        Users user = Users.builder().letchatNum(letchatNum).build();
         return usersMapper.selectOne(user);
     }
 }

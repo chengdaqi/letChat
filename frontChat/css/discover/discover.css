@@ -1,0 +1,79 @@
+.icon {
+	width: 1.3em;
+	height: 1.3em;
+	vertical-align: -0.3125rem; 
+	fill: currentColor;
+	overflow: hidden;
+}
+
+.mui-media .mui-media-body {
+	display: inline;
+}
+
+.mui-table-view-interval{
+	margin-top: 0.625rem;
+}
+
+.mui-table-view-index{
+	/* margin-top: 0.625rem; */
+	margin-bottom: 0.625rem;
+}
+
+.mui-media-index >a{
+	height: 6.25rem;
+}
+
+.icon-text{
+	margin-left: 0.3125rem;
+}
+
+.person-detail-span-text >span{
+	float: right;
+	margin-right: 0.625rem;
+}
+
+.icon-erweima{
+	float: right;
+	margin-right: 1.25rem;
+	margin-top: 0.125rem;
+}
+
+.mui-media-index >a >img{
+	max-width: 3.75rem !important;
+	height: 3.75rem !important;
+	border-radius: 10px;
+	margin-top: 0.625rem;
+}
+
+.user-info{
+	margin-top: 0.625rem;
+}
+
+.mui-nikiname{
+	font-size: 1rem;
+	font-weight: bold;
+	color: #000000;
+	margin-bottom: 1.25rem !important;
+}
+
+.colum_icon {
+	width: 1.0625rem; 
+	height: 1.0625rem;
+	padding-top:0.1875rem;
+	float: right;
+}
+.person-detail-image{
+	margin-right: 0.625rem;
+	min-width: 3.75rem;
+	height: 3.75rem !important;
+	border-radius: 10px;
+}
+
+.person-detail-text{
+	position: absolute;
+	margin-top: 1.25rem;
+}
+
+.person-detail-text-icon{
+	margin-top: 1.25rem;
+}

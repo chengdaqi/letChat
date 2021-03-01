@@ -1,0 +1,39 @@
+.icon {
+	width: 2em;
+	height: 2em;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+}
+
+.contact-list {
+	padding: 0.5rem 0.9375rem;
+}
+
+.contact-list-index {
+	
+}
+
+.contact-list-interval {
+	background-color: #efeff4;
+	padding-top: 0rem;
+	padding-bottom: 0rem;
+	height: 2.125rem;
+}
+
+.contact-list-interval > li{
+	padding-top: 0.5rem;
+}
+
+.contact-list-index >a >img {
+	height: 2.125rem !important;
+}
+
+.contact-img {
+	border-radius: 0.3125rem;
+}
+
+.contact-nikename {
+	margin-top: 0.625rem;
+	color: #000000;
+}

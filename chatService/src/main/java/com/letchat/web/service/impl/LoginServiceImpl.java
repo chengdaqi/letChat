@@ -20,23 +20,23 @@ public class LoginServiceImpl implements LoginService {
 
 
     @Override
-    public Users queryUser(String username, String password) {
+    public Users queryUser(String letchatNum, String password) {
         // password 进行加密
-        String shaEncryption = EncryptionUtils.getShaEncryption(password, username);
-        Users users = Users.builder().username(username).password(shaEncryption).build();
+        String shaEncryption = EncryptionUtils.getShaEncryption(password, letchatNum);
+        Users users = Users.builder().letchatNum(letchatNum).password(shaEncryption).build();
         return usersMapper.selectOne(users);
     }
 
     @Override
-    public Users queryUserByUserName(String username) {
-        Users user = Users.builder().username(username).build();
+    public Users queryUserByUserName(String letchatNum) {
+        Users user = Users.builder().letchatNum(letchatNum).build();
         return usersMapper.selectOne(user);
     }
 
     @Override
-    public void registerUser(String username, String password) {
-        String shaEncryption = EncryptionUtils.getShaEncryption(password, username);
-        Users user = Users.builder().username(username).password(shaEncryption).build();
-        usersMapper.insert(user);
+    public void registerUser(Users userInfo) {
+        String shaEncryption = EncryptionUtils.getShaEncryption(userInfo.getPassword(), userInfo.getLetchatNum());
+        userInfo.setPassword(shaEncryption);
+        usersMapper.insert(userInfo);
     }
 }
